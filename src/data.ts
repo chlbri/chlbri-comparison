@@ -1,5 +1,5 @@
-import { dequal } from 'dequal';
-import { Compare } from './types';
+import {dequal} from 'dequal';
+import {Compare} from './types';
 
 export function isArray<T>(value: unknown): value is Array<T> {
   return value instanceof Array;
@@ -7,6 +7,14 @@ export function isArray<T>(value: unknown): value is Array<T> {
 
 export function isNullish(val: unknown): val is undefined | null {
   return val === null || val === undefined;
+}
+
+export function isNull(val: unknown): val is null {
+  return val === null;
+}
+
+export function isUndefined(val: unknown): val is undefined {
+  return val === undefined;
 }
 
 function _compareArray(arg1?: any[], arg2?: any[]) {
@@ -35,7 +43,7 @@ function _dataCompare(arg1: any, arg2: any): boolean {
     return _compareArray(arg1, arg2);
   }
 
-  const _arg2 = Object.entries({ ...arg2 })
+  const _arg2 = Object.entries({...arg2})
     .filter(([, value]) => !isNullish(value))
     .reduce((prev, [key, value]) => {
       prev[key] = value;
@@ -48,7 +56,7 @@ function _dataCompare(arg1: any, arg2: any): boolean {
     return true;
   }
 
-  const _arg1 = Object.entries({ ...arg1 })
+  const _arg1 = Object.entries({...arg1})
     .filter(([key]) => {
       return keys2.includes(key);
     })
