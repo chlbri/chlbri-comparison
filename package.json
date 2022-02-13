@@ -5,6 +5,9 @@
   "author": "chlbri <bri_lvi@icloud.com>",
   "license": "MIT",
   "private": true,
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "tsc": "tsc",
     "build": "yarn run tsc && yarn run lint",
@@ -18,5 +21,8 @@
     "clean": "yarn cache clean",
     "yarn": "yarn install",
     "git-push": "git push --tags"
+  },
+  "dependencies": {
+    "dequal": "^2.0.2"
   }
 }
