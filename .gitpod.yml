@@ -2,9 +2,10 @@
 
 tasks:
   - name: Configuration
-    before: npm install -g ts-node jest ts-jest
-    init: yarn install
-
+    before: bash .gitpod-config/globalDependencies.sh
+    init: pnpm install
+    command: jest
+    
 vscode:
   extensions:
     - github.vscode-pull-request-github
@@ -18,7 +19,6 @@ vscode:
     - hbenl.vscode-test-explorer
     - fabiospampinato.vscode-todo-plus
     - dbaeumer.vscode-eslint
-    - tabnine.tabnine-vscode
     - codezombiech.gitignore
     - foxundermoon.shell-format
     - redhat.vscode-xml
