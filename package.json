@@ -1,28 +1,54 @@
 {
-  "name": "gitpod-typescript",
-  "version": "0.0.1",
-  "description": "GitPod for Typescript",
+  "name": "@bemedev/comparison",
+  "version": "0.0.11",
+  "description": "Comparison",
   "author": "chlbri <bri_lvi@icloud.com>",
   "license": "MIT",
-  "private": true,
-  "files": [
-    "dist"
-  ],
   "scripts": {
     "tsc": "tsc",
-    "build": "pnpm run tsc && pnpm run lint",
-    "test": "jest",
+    "build": "pnpm test && pnpm run build:-test ",
+    "build:-test": "pnpm run tsc && pnpm run lint",
+    "test": "jest --passWithNoTests",
     "prettier": "prettier --write \"src/**/*.{ts,tsx}\"",
     "eslint": "eslint \"{src/**/*,App}.{ts,tsx}\"",
-    "lint": "pnpm run prettier && pnpm run eslint --fix",
-    "rm": "./node_modules/.bin/rimraf -rf node_modules pnpm.lock",
+    "lint": "pnpm run prettier && pnpm run eslint -- --fix",
+    "rm": "rimraf -rf node_modules pnpm.lock",
     "rinit": "pnpm run rm && pnpm cache clean && pnpm run pnpm",
-    "publish": "pnpm run rm && pnpm run clean && pnpm run pnpm",
     "clean": "pnpm cache clean",
     "pnpm": "pnpm install",
-    "git-push": "git push --tags"
+    "git-push": "git push --tags",
+    "npm:publish": "source .env.zsh && npm publish --access public --scope=@bemedev && unset NPM_TOKEN"
   },
   "dependencies": {
     "dequal": "^2.0.2"
-  }
+  },
+  "main": "index.ts",
+  "devDependencies": {
+    "@types/faker": "^6.6.9",
+    "@types/jest": "^27.4.0",
+    "@typescript-eslint/eslint-plugin": "^5.11.0",
+    "@typescript-eslint/parser": "^5.11.0",
+    "dayjs": "^1.10.7",
+    "edit-json-file": "^1.7.0",
+    "eslint": "^8.9.0",
+    "faker": "^6.6.6",
+    "immer": "^9.0.12",
+    "jest": "^27.5.1",
+    "jest-cucumber": "^3.0.1",
+    "jest-extended": "^2.0.0",
+    "nanoid": "^3.2.0",
+    "prettier": "^2.5.1",
+    "rimraf": "^3.0.2",
+    "shelljs": "^0.8.5",
+    "ts-jest": "^27.1.3",
+    "typescript": "^4.5.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chlbri/chlbri-comparison.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chlbri/chlbri-comparison/issues"
+  },
+  "homepage": "https://github.com/chlbri/chlbri-comparison#readme"
 }

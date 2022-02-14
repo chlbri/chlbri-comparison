@@ -122,6 +122,7 @@ yarn.lock
 
 # dotenv environment variables file
 .env
+.env.zsh
 .env.test
 .env*.local
 .env.development.local
