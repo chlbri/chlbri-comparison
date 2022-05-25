@@ -5,7 +5,8 @@
   "author": "chlbri <bri_lvi@icloud.com>",
   "license": "MIT",
   "scripts": {
-    "tsc": "tsc",
+    "tsc": "tsc --pretty",
+    "tsc-w": "tsc -w --pretty",
     "build": "pnpm test && pnpm run build:-test ",
     "build:-test": "pnpm run tsc && pnpm run lint",
     "test": "jest --passWithNoTests",
@@ -19,29 +20,28 @@
     "git-push": "git push --tags",
     "npm:publish": "source .env.zsh && npm publish --access public --scope=@bemedev && unset NPM_TOKEN"
   },
-  "dependencies": {
-    "dequal": "^2.0.2"
-  },
   "main": "index.ts",
   "devDependencies": {
+    "@bemedev/npm-publish": "0.0.1-pnpm2",
     "@types/faker": "^6.6.9",
-    "@types/jest": "^27.4.0",
-    "@typescript-eslint/eslint-plugin": "^5.11.0",
-    "@typescript-eslint/parser": "^5.11.0",
-    "dayjs": "^1.10.7",
+    "@types/jest": "^27.5.1",
+    "@typescript-eslint/eslint-plugin": "^5.26.0",
+    "@typescript-eslint/parser": "^5.26.0",
+    "dayjs": "^1.11.2",
     "edit-json-file": "^1.7.0",
-    "eslint": "^8.9.0",
+    "eslint": "^8.16.0",
     "faker": "^6.6.6",
-    "immer": "^9.0.12",
+    "immer": "^9.0.14",
     "jest": "^27.5.1",
     "jest-cucumber": "^3.0.1",
     "jest-extended": "^2.0.0",
-    "nanoid": "^3.2.0",
-    "prettier": "^2.5.1",
+    "nanoid": "^3.3.4",
+    "prettier": "^2.6.2",
     "rimraf": "^3.0.2",
     "shelljs": "^0.8.5",
-    "ts-jest": "^27.1.3",
-    "typescript": "^4.5.5"
+    "ts-jest": "^27.1.5",
+    "tsd": "^0.20.0",
+    "typescript": "^4.7.2"
   },
   "repository": {
     "type": "git",

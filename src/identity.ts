@@ -1,3 +1,5 @@
-export function identityCompare(arg1: any, arg2: any): boolean {
+export function identityCompare(arg1: unknown, arg2: unknown): boolean {
   return arg1 === arg2;
 }
+
+//TODO: Test functions
